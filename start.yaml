@@ -1,0 +1,10 @@
+---
+- name: Start IIS Service
+  hosts: windows
+  gather_facts: no
+
+  tasks:
+    - name: Start IIS (W3SVC)
+      ansible.windows.win_service:
+        name: W3SVC
+        state: started
